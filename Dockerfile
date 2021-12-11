@@ -6,7 +6,6 @@ WORKDIR /app
 RUN dotnet restore ASPHellworld.sln
 
 # Copy everything else and build
-COPY ../engine/examples ./
 RUN dotnet publish -c Release -o out
 
 # Run tests
