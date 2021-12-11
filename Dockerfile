@@ -4,7 +4,7 @@ WORKDIR /app
 
 # Copy csproj and restore as distinct layers
 RUN ls
-COPY ../ ./
+COPY ./ ./
 RUN dotnet restore ASPHellworld.sln
 
 # Copy everything else and build
