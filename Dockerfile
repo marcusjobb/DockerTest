@@ -9,11 +9,11 @@ RUN dotnet restore DockerTest.sln
 COPY ../engine/examples ./
 RUN dotnet publish -c Release -o out
 
-#Run tests
-RUN dotnet test
+# Run tests
+# RUN dotnet test
 
 # Build runtime image
-#FROM mcr.microsoft.com/dotnet/aspnet:6.0
-#WORKDIR /app
-#COPY --from=build-env /app/out .
-#ENTRYPOINT ["dotnet", "DockerTest.dll"]
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
+WORKDIR /app
+COPY --from=build-env /app/out .
+ENTRYPOINT ["dotnet", "ASPHellworld.dll"]
